@@ -1,0 +1,46 @@
+<mvc:View controllerName="ar.com.travellist.controller.TravelView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+     displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <smartFilterBar:SmartFilterBar 
+		id="smartFilterBar"
+		entitySet="Travel">
+		<smartFilterBar:controlConfiguration>
+			<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration1"
+				key="AgencyID" visibleInAdvancedArea="true"
+				preventInitialDataFetchInValueHelpDialog="false">
+			</smartFilterBar:ControlConfiguration>
+		</smartFilterBar:controlConfiguration>
+        <smartFilterBar:controlConfiguration>
+			<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration2"
+				key="CustomerID" visibleInAdvancedArea="true"
+				preventInitialDataFetchInValueHelpDialog="false">
+			</smartFilterBar:ControlConfiguration>
+		</smartFilterBar:controlConfiguration>
+        <smartFilterBar:controlConfiguration>
+			<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration3"
+				key="CurrencyCode" visibleInAdvancedArea="true"
+				preventInitialDataFetchInValueHelpDialog="false">
+			</smartFilterBar:ControlConfiguration>
+		</smartFilterBar:controlConfiguration>
+	</smartFilterBar:SmartFilterBar>
+    <smartTable:SmartTable 
+		id="smartTable_ResponsiveTable"
+		smartFilterId="smartFilterBar" 
+		tableType="Table" 
+		editable="false"
+		entitySet="Travel" 
+		useVariantManagement="true"
+		useTablePersonalisation="true" 
+		header="Travel" 
+		showRowCount="true"
+		enableExport="true"
+		enableAutoBinding="false"
+        initiallyVisibleFields="TravelID,AgencyID,CustomerID,BeginDate,EndDate,BookingFee,TotalPrice">
+	</smartTable:SmartTable>
+        </content>    </Page>
+</mvc:View>

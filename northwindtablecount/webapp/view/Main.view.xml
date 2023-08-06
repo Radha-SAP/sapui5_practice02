@@ -1,0 +1,59 @@
+<mvc:View controllerName="ar.com.northwindtablecount.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Panel id="_IDGenPanel1">
+                <Table id="_IDGenTable1" items="{
+                    path: '/Products',
+                     parameters: {'expand' : 'Category,Order_Details,Supplier'}
+                    }" updateFinished=".onUpdateFinished">
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar1">
+                            <Title id="_IDGenTitle1" text="{mainView>/mainTableTitle}" level="H3"/>
+                            <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                            <SearchField id="_IDGenSearchField1" tooltip="{i18n>worklistSearchTooltip}" search=".onSearch">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" maxWidth="200px" priority="NeverOverflow"></OverflowToolbarLayoutData>
+                                </layoutData>
+                            </SearchField>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column id="_IDGenColumn1">
+                            <Text id="_IDGenText1" text="{i18n>ProductID}" />
+                        </Column>
+                        <Column id="_IDGenColumn2">
+                            <Text id="_IDGenText2" text="{i18n>ProductName}" />
+                        </Column>
+                        <Column id="_IDGenColumn3">
+                            <Text id="_IDGenText_3" text="{i18n>SupplierID}" />
+                        </Column>
+                        <Column id="_IDGenColumn4">
+                            <Text id="_IDGenText4" text="{i18n>CategoryID}" />
+                        </Column>
+                        <Column id="_IDGenColumn5">
+                            <Text id="_IDGenText5" text="{i18n>QuantityPerUnit}" />
+                        </Column>
+                        <Column id="_IDGenColumn6">
+                            <Text id="_IDGenText6" text="{i18n>UnitPrice}" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation" press=".onPress" id="_IDGenColumnListItem1">
+                            <Text id="_IDGenText7" text="{ProductID}" />
+                            <Text id="_IDGenText8" text="{ProductName}" />
+                            <Text id="_IDGenText9" text="{Supplier/CompanyName}" />
+                            <Text id="_IDGenText10" text="{Category/CategoryName}" />
+                            <Text id="_IDGenText11" text="{QuantityPerUnit}" />
+                            <Text id="_IDGenText12" text="{UnitPrice}" />
+
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
+   
+               

@@ -1,0 +1,53 @@
+<mvc:View controllerName="ar.com.northwindtablecount.controller.Detail"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:semantic="sap.f.semantic"
+  xmlns:footerbar="sap.ushell.ui.footerbar">
+  <semantic:SemanticPage id="_IDGenSemanticPage1" headerPinnable="false" toggleHeaderOnTitleClick="false" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+    <semantic:titleHeading>
+      <Title id="_IDGenTitle1" text="{Supplier/CompanyName}" level="H2"/>
+    </semantic:titleHeading>
+<semantic:headerContent>
+      <FlexBox id="_IDGenFlexBox1" alignItems="Start">
+        <Panel id="_IDGenPanel1" backgroundDesign="Transparent">
+          <ObjectAttribute id="_IDGenObjectAttribute1" text="{ProductID}"/>
+          <ObjectAttribute id="_IDGenObjectAttribute2" title="{i18n>detailContactNameTitle}" text="{Supplier/CompanyName}"/>
+          <ObjectAttribute id="_IDGenObjectAttribute3" title="{i18n>detailContactTitle}" text="{Supplier/ContactTitle}"/>
+          <ObjectAttribute id="_IDGenObjectAttribute4" title="{i18n>detailPhone}" text="{Supplier/Phone}"/>
+          <Panel id="_IDGenPanel2" backgroundDesign="Transparent">
+            <ObjectAttribute id="_IDGenObjectAttribute5" title="{i18n>detailAddress}" text="{Supplier/Address}"/>
+            <ObjectAttribute id="_IDGenObjectAttribute6" title="{i18n>detailPostalCodeCity}" text="{Supplier/PostalCode}{Supplier/City}"/>
+            <ObjectAttribute id="_IDGenObjectAttribute7" title="{i18n>detailCountry}" text="{Supplier/Country}"/>
+          </Panel>
+          <Panel id="_IDGenPanel3" backgroundDesign="Transparent">
+            <VBox id="_IDGenVBox1" class="sapUiLargeMarginEnd">
+              <Label id="_IDGenLabel1" text="{i18n>txtTotalValue}" />
+            </VBox>
+          </Panel>
+        </Panel>
+      </FlexBox>
+</semantic:headerContent>
+    <semantic:content>
+      <IconTabBar id="_IDGenIconTabBar1" expanded="{device/isNoPhone}" class="sapUiResponsiveContentPadding">
+        <items>
+          <IconTabFilter id="_IDGenIconTabFilter1" text="{i18n>ObjectOrderItemTabTitle}" key="info">
+            <Table id="_IDGenTable1" width="auto" items="{Products/}">
+              <columns>
+                <Column id="_IDGenColumn1">
+                  <Text id="_IDGenText1" text="{i18n>ProductID}" />
+                </Column>
+              </columns>
+              <items>
+                <ColumnListItem id="_IDGenColumnListItem1" type="Active" press=".onPress">
+                  <cells>
+                    <Text id="_IDGenText7" text="{ProductID}"/>
+                  </cells>
+                </ColumnListItem>
+              </items>
+            </Table>
+          </IconTabFilter>
+        </items>
+      </IconTabBar>
+    </semantic:content>
+  </semantic:SemanticPage>
+</mvc:View>

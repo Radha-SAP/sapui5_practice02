@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="ar.com.cardproject4.controller.main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Label
+                id="_IDGenLabel1"
+                text="CardCode"
+                labelFor="_IDGenComboBox1"
+                design="Bold"
+            />
+            <ComboBox
+                id="_IDGenComboBox1"
+                showSecondaryValues="true"
+                items="{
+					path: '/BusinessPartners',
+					sorter: { path: 'CardCode' }
+				}"
+            >
+                <core:ListItem
+                    id="_IDGenListItem1"
+                    key="{CardCode}"
+                    text="{CardCode}"
+                    additionalText="{CardName}"
+                />
+            </ComboBox>
+            <Button
+                id="_IDGenButton1"
+                text="Click Me to see Business Partner Details"
+                press="onPress"
+            />
+        </content>
+    </Page>
+</mvc:View>

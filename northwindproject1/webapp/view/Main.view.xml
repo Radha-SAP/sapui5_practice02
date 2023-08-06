@@ -1,0 +1,40 @@
+<mvc:View controllerName="ar.com.northwindproject1.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Panel id="_IDGenPanel1">
+         <Table id="_IDGenTable1">
+		<headerToolbar>
+			<Toolbar id="_IDGenToolbar1">
+				<Title id="_IDGenTitle1" text="{i18n>employeeList}"/>
+				<ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+				<Button id="_IDGenButton1" text="Create"  press="onCreate"/>
+			</Toolbar>
+		</headerToolbar>
+                    <columns>
+                        <Column id="_IDGenColumn1">
+                            <Text id="_IDGenText1" text="{i18n>employeeId}" />
+                        </Column>
+                        <Column id="_IDGenColumn2">
+                            <Text id="_IDGenText2" text="{i18n>name}" />
+                        </Column>
+                        <Column id="_IDGenColumn3">
+                            <Text id="_IDGenText_3" text="{i18n>department}" />
+                        </Column>
+                        <Column id="_IDGenColumn4">
+                            <Text id="_IDGenText4" text="{i18n>designation}" />
+                        </Column>
+                        <Column id="_IDGenColumn5">
+                            <Text id="_IDGenText5" text="{i18n>salary}" />
+                        </Column>
+                      </columns>
+                     </Table>
+                 </Panel>   
+            </content>
+          </Page>
+</mvc:View>  
+            
+           
+                
+        

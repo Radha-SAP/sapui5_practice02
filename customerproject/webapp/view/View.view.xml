@@ -1,0 +1,72 @@
+<mvc:View controllerName="ar.com.customerproject.controller.View"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox id="_IDGenVBox12">
+                <HBox id="_IDGenHBox5">
+
+                    <Label id="_IDGenLabel25" text="Customer Code" labelFor="input-b" design="Bold" />
+
+                    <ComboBox id="_IDGenComboBox1" showSecondaryValues= "true" items="{
+					path: '/U_CUSTOMERSUBGROUP',
+					sorter: { path: 'Code' }
+				}" change=".onHandleChange">
+                        <core:ListItem id="_IDGenListItem1" key="{Code}" text="{Code}" additionalText = "{Name}"/>
+                    </ComboBox>
+                </HBox>
+
+            </VBox>
+            <HBox id="_IDGenHBox1">
+                <Label id="_IDGenLabel11" text="Customer Name" labelFor="input-b" design="Bold" />
+                <Input id="_IDGenText1" editable="false" value="" width="300px"/>
+            </HBox>
+            <DatePicker id="DP1" placeholder="Enter Date" change="handleChange" class="sapUiSmallMarginBottom"/>
+
+
+            <Table id="_IDGenTable1" items="{Order1>/Orders}" mode="MultiSelect">
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText22" text="ItemCode" />
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Text id="_IDGenText2" text="ItemName" />
+                    </Column>
+                    <Column id="_IDGenColumn3">
+                        <Text id="_IDGenText_3" text="Item Quantity" />
+                    </Column>
+                    <Column id="_IDGenColumn4">
+                        <Text id="_IDGenText4" text="Item Price" />
+                    </Column>
+                    <Column id="_IDGenColumn5">
+                        <Text id="_IDGenText5" text="Total Price" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <Text id="_IDGenText7" text="{Order1>ItemCode}" />
+                        <Text id="_IDGenText8" text="{Order1>ItemName}" />
+                        <Text id="_IDGenText9" text="{Order1>ItemQuantity}" />
+                        <Text id="_IDGenText10" text="{Order1>ItemPrice}" />
+                        <Text id="_IDGenText11" text="{Order1>TotalPrice}" />
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <VBox id="_IDGenVBox2">
+                <HBox id="_IDGenHBox3">
+                    <Button id="_IDGenButton1" text="Add new record" press="onPress" enabled="true">
+                    </Button>
+                    <Button id="_IDGenButton3" text="Create Sales Order" press="oncreate" enabled="true">
+                    </Button>
+                </HBox>
+            </VBox>
+            <VBox id="_IDGenVBox3">
+                <HBox id="_IDGenHBox2">
+                    <Label id="_IDGenLabel22" text="Total Price for all items" labelFor="input-b" design="Bold" />
+                    <Input id="_IDGenText12" editable="false" value="0"/>
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
